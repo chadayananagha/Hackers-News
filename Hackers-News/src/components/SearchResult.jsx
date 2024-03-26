@@ -4,20 +4,19 @@
 const SearchResult = ({datas}) => {
   return (
     <div>
-        {/* {data.hits.map(newsPost =>
-        <>
-           <h3>{newsPost.title} <a href={newsPost.url}>({newsPost.url})</a></h3>
-           <p>points:{newsPost.points}</p>
-        </>
-           )}    */}
-           <ol>
-            {/* {datas.map((data) =>(
-            <> */}
-            <l1>{datas.title}</l1>
-
-            {/* </>
-            ))} */}
-           </ol>
+        <ol className="mt-8 flex flex-col items-center justify-center font-sans">
+      {datas.map((result) => (
+        <li key={result.objectID}>
+          <a
+            href={result.url}
+            className="hover-sm:text-slate-50 hover-sm:bg-purple-300 cursor-pointer text-slate-50 hover:text-purple-300"
+          >
+            {result.title}
+          </a>
+          <p>{result.points} point by <a href="">{result.author}</a> | created at {result.created_at} | {result.num_comments} comments</p>
+        </li>
+      ))}
+    </ol>
     </div> 
   )
 }
