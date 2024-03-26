@@ -1,15 +1,23 @@
-// import { useState } from 'react';
-import React from 'react';
-
-import data from '../src/hackers-news.json';
+// import React from 'react';
+import { useEffect, useState } from 'react';
+import Header from '../src/components/Header';
+import SearchResult from '../src/components/SearchResult';
+import Spinner from '../src/components/Spinner';
 
 function App() {
-  
+  const [datas,setDatas]=useState([]);
+  useEffect(() => {
+    fetch("http://hn.algolia.com/api/v1/search?query=...")
+    .then(response => response.json())
+    .then(datas => setDatas(datas.hits))
+  },[])
+
   return (
-    <>
-      <div>{data.hits.map(newsPost => <h1>{newsPost.title}</h1> )}</div> 
-    </>
+    <div className=''>
+      <Header />
+      <Spinner />
+      <SearchResult datas={datas} />
+    </div>
   )
 }
-
 export default App;
