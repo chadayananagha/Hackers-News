@@ -4,26 +4,27 @@ import Header from "../src/components/Header";
 import SearchResult from "../src/components/SearchResult";
 import CircularProgress from '@mui/material/CircularProgress';
 // import Pagination from '@mui/material/Pagination';
-
+import { Container } from "@mui/material";
 function App() {
   const [datas, setDatas] = useState([]);
   const [isLoading, setIsLoading]=useState(true);
+ 
 
   useEffect(() => {
-    fetch("http://hn.algolia.com/api/v1/search?query=...")
+    fetch("http://hn.algolia.com/api/v1/search?query=")
       .then((response) => response.json())
       .then((datas) => {setDatas(datas.hits);
       setIsLoading(false)});
   }, []);
 
   return (
-    <div className="">
+    <Container maxWidth="sm">
       <Header />
       {isLoading ? (<CircularProgress />):
-      datas.map( result => <><SearchResult key={result.objectID} datas={datas} result={result} /></>)
+      (<SearchResult datas={datas} />)
       }  
       {/* <Pagination count={10} />    */}
-    </div>
+    </Container>
   );
 }
 export default App;
