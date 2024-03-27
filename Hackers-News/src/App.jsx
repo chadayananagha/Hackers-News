@@ -18,7 +18,7 @@ function App() {
 const handlePageChange = (event,value) =>
 {
   console.log(event);
-  setCurrentPage(event.selected);
+  // setCurrentPage(event.selected);
   setCurrentPage(value);
 }
 const handleSubmit = event =>
@@ -32,7 +32,7 @@ const handleSubmit = event =>
     const fetchData =async() =>
     {
       try{
-       const { data } = await axios.get("http://hn.algolia.com/api/v1/search?query=",
+       const { data } = await axios.get("http://hn.algolia.com/api/v1/search?",
        {
         params: {page:currentPage, query},
        }
