@@ -1,7 +1,8 @@
 // import React from 'react';
 
 
-const SearchResult = ({datas}) => {
+const SearchResult = ({datas,result}) => {
+  if(!result.title) return null;
   return (
     <div>
         <ol className="mt-8 flex flex-col items-center justify-center font-sans">
