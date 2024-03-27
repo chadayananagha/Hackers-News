@@ -93,8 +93,8 @@ export default function Header({handleSubmit,setSearchInput,searchInput}) {
 
   return (
     
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <Box sx={{ flexGrow: 1,bgcolor: 'bisque',}}>
+      <AppBar position="static" sx={{ bgcolor: 'gray',}}>
         <Toolbar>
           <img
             src="public/images/899d76bbc312122ee66aaaff7f933d13.png"

@@ -55,7 +55,7 @@ const handleSubmit = event =>
 
   return (
    
-<Container>
+<Container sx={{ bgcolor: 'bisque',}}>
       <Header handleSubmit={handleSubmit} setSearchInput={setSearchInput} searchInput={searchInput} />
       {isLoading ? (<CircularProgress />):
       (<SearchResult datas={datas} />)
