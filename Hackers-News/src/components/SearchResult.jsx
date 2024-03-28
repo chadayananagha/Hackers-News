@@ -1,9 +1,11 @@
 // import React from 'react';
 
+import { Container } from "@mui/material";
+
 
 const SearchResult = ({datas}) => {
   return (
-    <div>
+    <Container sx={{ml:-6,}}>
         <ol className="mt-8 flex flex-col items-center justify-center font-sans">
       {datas.map((result) => (
         <li key={result.objectID} style={{marginBottom:'20px'}}>
@@ -15,7 +17,7 @@ const SearchResult = ({datas}) => {
         </li>
       ))}
     </ol>
-    </div> 
+    </Container> 
   )
 }
 export default SearchResult;

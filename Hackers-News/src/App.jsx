@@ -57,12 +57,11 @@ const handleSubmit = event =>
    
 <Container sx={{ bgcolor: 'bisque',mx: {xs:2,sm:2,md:10,lg:30,xl:45},}} >
       <Header handleSubmit={handleSubmit} setSearchInput={setSearchInput} searchInput={searchInput} />
-      {isLoading ? (<CircularProgress />):
+      <Typography sx={{mt:2}}>Page: {currentPage}</Typography> 
+       <Pagination sx={{mt:2,ml:-2}} count={totalPages} page={currentPage} onChange={handlePageChange} />   
+      {isLoading ? (<CircularProgress sx={{mx:70}}/>):
       (<SearchResult datas={datas} />)
       } 
-       <Typography>Page: {currentPage}</Typography> 
-       <Pagination count={totalPages} page={currentPage} onChange={handlePageChange} />   
-
       </Container>
   );
 }

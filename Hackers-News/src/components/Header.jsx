@@ -93,11 +93,11 @@ export default function Header({handleSubmit,setSearchInput,searchInput}) {
 
   return (
     
-    <Box sx={{ flexGrow: 1,bgcolor: 'bisque',}}>
+    <Box sx={{ flexGrow:1,bgcolor: 'bisque',}}>
       <AppBar position="static" sx={{ bgcolor: 'gray',}}>
-        <Toolbar>
+        <Toolbar> 
           <img
-            src="public/images/899d76bbc312122ee66aaaff7f933d13.png"
+            src="/images/899d76bbc312122ee66aaaff7f933d13.png"
             alt="hackers-news icon"
             width={50}
             height={50}
@@ -106,25 +106,21 @@ export default function Header({handleSubmit,setSearchInput,searchInput}) {
             variant="h6"
             noWrap
             component="div"
-            sx={{ display: { xs: "none", sm: "block" } }}
+            sx={{ display: { xs: "none", sm: "block",},ml:2 }}
           >
             HACKER'S NEWS
           </Typography>
-          <Paper
-      component="form"
-      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }} onSubmit={handleSubmit}
-    >
-       <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-        <SearchIcon />
-      </IconButton>
-      <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-      <InputBase
-        sx={{ ml: 1, flex: 1 }}
-        placeholder="Search Hacker's News"
-        inputProps={{ 'aria-label': 'search google maps' }}
-        value={searchInput}
-              onChange={event => setSearchInput(event.target.value)}
-      />
+          <Paper component="form" sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400,ml:2 }} onSubmit={handleSubmit}>
+            <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
+              <SearchIcon />
+            </IconButton>
+            <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+            <InputBase
+              sx={{ ml: 1, flex: 1 }}
+              placeholder="Search Hacker's News"
+              inputProps={{ 'aria-label': 'search google maps' }}
+              value={searchInput}
+                    onChange={event => setSearchInput(event.target.value)}/>
     </Paper>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
@@ -152,6 +148,7 @@ export default function Header({handleSubmit,setSearchInput,searchInput}) {
               <MoreIcon />
             </IconButton>
           </Box>
+        
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
