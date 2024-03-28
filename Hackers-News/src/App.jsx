@@ -26,6 +26,10 @@ const handleSubmit = event =>
   event.preventDefault();
   setCurrentPage(1);
   setQuery(searchInput);
+  if(searchInput)
+  {
+    setSearchInput("");
+  }
 }
   useEffect(() => {
     setIsLoading(true);
